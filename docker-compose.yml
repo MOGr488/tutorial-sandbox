@@ -38,11 +38,13 @@ services:
             - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
             - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
             - ./docker/php/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
+        environment:
+            - PHP_IDE_CONFIG=serverName=YourServerName
         links:
             - tutorial-mysql
             - tutorial-redis
         ports:
-            - "9001:9001"
+            - "9001:9003"
         tmpfs:
             - /dev/shm
         extra_hosts:
