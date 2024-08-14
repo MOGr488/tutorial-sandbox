@@ -45,6 +45,7 @@ services:
             - tutorial-redis
         ports:
             - "9001:9003"
+            - "5173:5173"
         tmpfs:
             - /dev/shm
         extra_hosts:
