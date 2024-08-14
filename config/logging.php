@@ -126,6 +126,24 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+        'daily_errors' => [
+            'driver' => 'daily',
+            'formatter' => \Monolog\Formatter\JsonFormatter::class,
+            'path' => storage_path('logs/error.log'),
+            'level' => 'error',
+            'days' => 14,
+            'bubble' => false,
+            'replace_placeholders' => true,
+        ],
+        'daily_debug' => [
+            'driver' => 'daily',
+            'formatter' => \Monolog\Formatter\JsonFormatter::class,
+            'path' => storage_path('logs/debug.log'),
+            'level' => 'debug',
+            'days' => 14,
+            'bubble' => false,
+            'replace_placeholders' => true,
+        ]
 
     ],
 
